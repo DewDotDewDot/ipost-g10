@@ -1,0 +1,80 @@
+.form-wrapper 
+{
+	margin: auto; 
+}
+table 
+{
+	margin: 60px auto;
+	background-color: grey;
+	opacity: 90%;
+	border-collapse: collapse;
+	width: 30%;
+	border: 12px grey;
+	padding: 10px;
+}
+table td 
+{
+	padding: 5px 10px;
+}
+table#row-bordered tr 
+{
+	border: 1px solid #050505;
+}
+  
+table#cell-bordered td
+{
+	border: 1px solid #050505;
+	padding: 5px 10px;
+}
+
+.form-main 
+{
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	overflow-y: auto;
+	height: auto;
+	width: 100vw;
+	min-height: 0; 
+}
+
+.formItem 
+{
+	margin: 5px auto; 
+	color:white;
+}
+
+.form-select 
+{
+	width: 200px;
+	height: 35px; 
+}
+input 
+{
+	margin-bottom: 5vh auto;
+	border-right: none;
+	border-top: none;
+	border-left: none;
+	background-color: transparent;
+	outline: none;
+	color: white;
+	caret-color: white;
+	padding: 6px;
+	font-size: 20px; 
+}
+
+input[type=submit] 
+{
+	background: black;
+	margin: auto;
+	margin-top: 30px;
+	width: 20%;
+	padding: 2vh;
+	border: none;
+	cursor: pointer;
+	border-radius: 30px;
+}
+label
+{
+	font-size: 15px; 
+}
