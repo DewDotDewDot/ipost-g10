@@ -6,4 +6,5 @@
 
    $_SESSION["siteName"] = "IPOST";
 
+   //test if push works
 ?>
