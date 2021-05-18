@@ -1,6 +1,6 @@
 <?php
   include_once("database.php");
-  if (isset($_SESSION["user_type"]) || !isset($_POST["loginForm"])) 
+  if (isset($_SESSION["user_type"]) || !isset($_POST["loginForm"]))
   {
     header("location: index.php");
     exit();
@@ -8,16 +8,16 @@
   $processMake = false;
 
   $listEmptyVars = [];
-  foreach ($_POST as $key => $value) 
+  foreach ($_POST as $key => $value)
   {
     $_POST[$key] = trim($value);
     $listEmptyVars[$key] = empty($_POST[$key]);
   }
 
-  if (in_array(true, $listEmptyVars, true)) 
+  if (in_array(true, $listEmptyVars, true))
   {
     $errorString = "ERROR: EMPTY VALUES FOUND\\nThe following fields were found empty:\\n";
-    foreach ($listEmptyVars as $key => $value) 
+    foreach ($listEmptyVars as $key => $value)
     {
       if($value)
       {

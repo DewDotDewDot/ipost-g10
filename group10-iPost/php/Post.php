@@ -24,32 +24,33 @@
 
         alert('<?php echo $_SESSION["alert_feedPost"]; ?>');
         <?php unset($_SESSION["alert_feedPost"]); ?>
-     
+
       </script>
     <?php endif; ?>
 
       <div class="feed-wrapper">
         <form class="feed-formPost" action="handlePost.php" method="post">
-         
+
         <h1>Welcome, <?php echo $_SESSION["user_name"]; ?></h1>
-        <textarea name="feedPost" rows="4" cols="50" placeholder="Just Post it  <?php echo $_SESSION["user_name"]; ?>?" required></textarea>
+        <input type="text" name="title" placeholder="Set your title here" required> <br>
+        <textarea name="feedPost" rows="4" cols="50" placeholder="Just post it,  <?php echo $_SESSION["user_name"]; ?>!" required></textarea>
         <input type="submit" name="feedSubmit" value="Post">
-     
+
         </form>
 
-      <h1>See your friends!</h1>
+      <h1>See your friends!</h1> <!--feed set-->
         <div class="feed-posts">
           <?php if($result = $sql->query("SELECT * FROM tbl_feed")): ?>
             <?php while($row = $result->fetch_assoc()): ?>
               <?php
-                $tmp_content = $row["feed_content"];
-                $tmp_user_id = $row["feed_owner"];
+                $tmp_content = $row["content"];
+                $tmp_user_id = $row["user_id"];
               ?>
-              
+
               <?php if($result2 = $sql->query("SELECT * FROM tbl_users WHERE id = '$tmp_user_id'")): ?>
-                 
+
                 <?php while($row2 = $result2->fetch_assoc()): ?>
-                 
+
                   <?php
                     $tmp_username = $row2["username"];
                     $tmp_profile_pic = $row2["profile_pic"];
