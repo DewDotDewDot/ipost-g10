@@ -40,7 +40,30 @@
 
       <h1>See your friends!</h1> <!--feed set-->
         <div class="feed-posts">
-          <?php if($result = $sql->query("SELECT * FROM tbl_feed")): ?>
+          <form action="Post.php" method="post">
+            <select name="sortOption">
+              <option value="new">Newest</option>
+              <option value="hot">Hottest</option>
+            </select>
+            <button type="submit">Sort</button>
+          </form>
+          <?php
+          $sortQuery = "SELECT * FROM tbl_feed ORDER BY timestamp DESC";
+          if(empty($_POST['sortOption'])) {
+            $sortQuery = "SELECT * FROM tbl_feed ORDER BY timestamp DESC";
+            echo "default";
+          } else {
+            if ($_POST['sortOption'] == "new") {
+              $sortQuery = "SELECT * FROM tbl_feed ORDER BY timestamp DESC";
+              echo $_POST['sortOption'];
+            }
+            if ($_POST['sortOption'] == "hot") {
+              $sortQuery = "SELECT * FROM tbl_feed ORDER BY like_score DESC";
+              echo $_POST['sortOption'];
+            }
+          }
+
+          if($result = $sql->query($sortQuery)): ?>
             <?php while($row = $result->fetch_assoc()): ?>
               <?php
                 $tmp_post_id = $row["id"];
