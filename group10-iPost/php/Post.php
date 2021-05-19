@@ -51,15 +51,15 @@
           $sortQuery = "SELECT * FROM tbl_feed ORDER BY timestamp DESC";
           if(empty($_POST['sortOption'])) {
             $sortQuery = "SELECT * FROM tbl_feed ORDER BY timestamp DESC";
-            echo "default";
+            echo "Sorted by: Newest";
           } else {
             if ($_POST['sortOption'] == "new") {
               $sortQuery = "SELECT * FROM tbl_feed ORDER BY timestamp DESC";
-              echo $_POST['sortOption'];
+              echo "Sorted by: Newest";
             }
             if ($_POST['sortOption'] == "hot") {
               $sortQuery = "SELECT * FROM tbl_feed ORDER BY like_score DESC";
-              echo $_POST['sortOption'];
+              echo "Sorted by: Hottest";
             }
           }
 
