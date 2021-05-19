@@ -61,55 +61,65 @@
                   ?>
 
                     <div class="feed-itemsWrapper">
-                      <div class="post-title">
-                        <div class="feed-item">
-                          <img src="<?php echo  "../img/$tmp_profile_pic"; ?>">
-                        </div>
-                        <div class="feed-item">
-                          <h2><?php echo $tmp_username; ?></h2>
-                        </div>
-                        <div class="post-content">
-                          <p><?php echo $tmp_timestamp; ?></p>
-                        </div>
-                      </div>
-                      <div class="post-content">
-                        <p><?php echo $tmp_title; ?></p>
-                      </div>
-                      <div class="post-content">
-                        <p><?php echo $tmp_content; ?></p>
-                      </div>
-                      <form action="handleScore.php?post_id=<?php echo $tmp_post_id?>" method="post">
-                        <div class="post-content">
-                          <?php
-                            $up = "";
-                            $down = "";
-                            $sess_user_id = $_SESSION['user_id'];
-
-                            $scoreCheckQuery = "SELECT score FROM tbl_score
-                                                WHERE post_id = '$tmp_post_id' AND user_id = '$sess_user_id'";
-                            $execQuery = mysqli_query($sql, $scoreCheckQuery);
-                            $scoreFetch = mysqli_fetch_assoc($execQuery);
-
-                            if (empty($scoreFetch['score'])) {
-                              $up = "";
-                              $down = "";
-                            } else {
-                              if($scoreFetch['score'] == 1) {
-                                $up = "disabled";
-                                $down = "";
-                              }
-                              if($scoreFetch['score'] == -1) {
+                      <table>
+                        <tr>
+                          <td>
+                          <form action="handleScore.php?post_id=<?php echo $tmp_post_id?>" method="post">
+                            <div class="post-content">
+                              <?php
                                 $up = "";
-                                $down = "disabled";
-                              }
-                            }
+                                $down = "";
+                                $sess_user_id = $_SESSION['user_id'];
 
-                          ?>
-                          <button name="score" type="submit" value="1" <?php echo $up?>> ↑ </button>
-                          <p><?php echo $tmp_score; ?></p>
-                          <button name="score" type="submit" value="-1" <?php echo $down?>> ↓ </button>
-                        </div>
-                      </form
+                                $scoreCheckQuery = "SELECT score FROM tbl_score
+                                                    WHERE post_id = '$tmp_post_id' AND user_id = '$sess_user_id'";
+                                $execQuery = mysqli_query($sql, $scoreCheckQuery);
+                                $scoreFetch = mysqli_fetch_assoc($execQuery);
+
+                                if (empty($scoreFetch['score'])) {
+                                  $up = "";
+                                  $down = "";
+                                } else {
+                                  if($scoreFetch['score'] == 1) {
+                                    $up = "disabled";
+                                    $down = "";
+                                  }
+                                  if($scoreFetch['score'] == -1) {
+                                    $up = "";
+                                    $down = "disabled";
+                                  }
+                                }
+
+                              ?>
+                              <button name="score" type="submit" value="1" <?php echo $up?>> ↑ </button>
+                              <p><?php echo $tmp_score; ?></p>
+                              <button name="score" type="submit" value="-1" <?php echo $down?>> ↓ </button>
+                            </div>
+                          </form>
+                          </td>
+                          <td>
+                          <div class="post-title">
+                            <div class="feed-item">
+                              <img src="<?php echo  "../img/$tmp_profile_pic"; ?>">
+                            </div>
+                            <div class="feed-item">
+                              <h2><?php echo $tmp_username; ?></h2>
+                            </div>
+                            <div class="post-content">
+                              <p><?php echo $tmp_timestamp; ?></p>
+                            </div>
+                          </td>
+                          <td>
+                          </div>
+                          <div class="post-content">
+                            <p><?php echo $tmp_title; ?></p>
+                          </div>
+                          <div class="post-content">
+                            <p><?php echo $tmp_content; ?></p>
+                          </div>
+                          </td>
+                        </tr>
+                      </table>
                     </div>
 
                 <?php endwhile; ?>
