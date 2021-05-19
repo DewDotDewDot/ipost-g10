@@ -33,7 +33,7 @@
 
         <h1>Welcome, <?php echo $_SESSION["user_name"]; ?></h1>
         <input type="text" name="title" placeholder="Set your title here" required> <br>
-        <textarea name="feedPost" rows="4" cols="50" placeholder="Just post it,  <?php echo $_SESSION["user_name"]; ?>!" required></textarea>
+        <textarea name="feedPost" rows="4" cols="50" placeholder="Put your text content here" required></textarea>
         <input type="submit" name="feedSubmit" value="Post">
 
         </form>
@@ -43,8 +43,12 @@
           <?php if($result = $sql->query("SELECT * FROM tbl_feed")): ?>
             <?php while($row = $result->fetch_assoc()): ?>
               <?php
+                $tmp_post_id = $row["id"];
                 $tmp_content = $row["content"];
                 $tmp_user_id = $row["user_id"];
+                $tmp_title = $row["header"];
+                $tmp_timestamp = $row["timestamp"];
+                $tmp_score = $row["like_score"];
               ?>
 
               <?php if($result2 = $sql->query("SELECT * FROM tbl_users WHERE id = '$tmp_user_id'")): ?>
@@ -61,13 +65,51 @@
                         <div class="feed-item">
                           <img src="<?php echo  "../img/$tmp_profile_pic"; ?>">
                         </div>
-                      <div class="feed-item">
+                        <div class="feed-item">
                           <h2><?php echo $tmp_username; ?></h2>
                         </div>
+                        <div class="post-content">
+                          <p><?php echo $tmp_timestamp; ?></p>
+                        </div>
+                      </div>
+                      <div class="post-content">
+                        <p><?php echo $tmp_title; ?></p>
                       </div>
                       <div class="post-content">
                         <p><?php echo $tmp_content; ?></p>
                       </div>
+                      <form action="handleScore.php?post_id=<?php echo $tmp_post_id?>" method="post">
+                        <div class="post-content">
+                          <p><?php echo $tmp_score; ?></p>
+                          <?php
+                            $up = "";
+                            $down = "";
+                            $sess_user_id = $_SESSION['user_id'];
+
+                            $scoreCheckQuery = "SELECT score FROM tbl_score
+                                                WHERE post_id = '$tmp_post_id' AND user_id = '$sess_user_id'";
+                            $execQuery = mysqli_query($sql, $scoreCheckQuery);
+                            $scoreFetch = mysqli_fetch_assoc($execQuery);
+
+                            if (empty($scoreFetch['score'])) {
+                              $up = "";
+                              $down = "";
+                            } else {
+                              if($scoreFetch['score'] == 1) {
+                                $up = "disabled";
+                                $down = "";
+                              }
+                              if($scoreFetch['score'] == -1) {
+                                $up = "";
+                                $down = "disabled";
+                              }
+                            }
+
+                          ?>
+                          <button name="score" type="submit" value="1" <?php echo $up?>> Upvote </button>
+                          <button name="score" type="submit" value="-1" <?php echo $down?>> Downvote </button>
+                        </div>
+                      </form
                     </div>
 
                 <?php endwhile; ?>
