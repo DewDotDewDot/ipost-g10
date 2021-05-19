@@ -80,7 +80,6 @@
                       </div>
                       <form action="handleScore.php?post_id=<?php echo $tmp_post_id?>" method="post">
                         <div class="post-content">
-                          <p><?php echo $tmp_score; ?></p>
                           <?php
                             $up = "";
                             $down = "";
@@ -106,8 +105,9 @@
                             }
 
                           ?>
-                          <button name="score" type="submit" value="1" <?php echo $up?>> Upvote </button>
-                          <button name="score" type="submit" value="-1" <?php echo $down?>> Downvote </button>
+                          <button name="score" type="submit" value="1" <?php echo $up?>> ↑ </button>
+                          <p><?php echo $tmp_score; ?></p>
+                          <button name="score" type="submit" value="-1" <?php echo $down?>> ↓ </button>
                         </div>
                       </form
                     </div>
