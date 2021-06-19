@@ -5,7 +5,6 @@
     header("location: index.php");
     exit();
   }
-  $processMake = false;
 
   $listEmptyVars = [];
   foreach ($_POST as $key => $value)
@@ -26,16 +25,9 @@
     }
     $errorString .= "\\n\\nLogin Failed";
 
-    if($processMake)
-    {
-      echo "<br><br>Error String:<br>".$errorString;
-    }
-    else
-    {
-      $_SESSION["alert_err"] = $errorString;
-      header("location: login.php");
-      exit();
-    }
+    $_SESSION["alert_err"] = $errorString;
+    header("location: login.php");
+    exit();
   }
 
   else
@@ -52,16 +44,10 @@
     if(!in_array($_POST["username"], $existingUsernames))
     {
       $errorString = "ERROR: This username is not registered or wrong password.\\n\\nLogin Failed.";
-      if($processMake)
-      {
-        echo "<br>Phase 2 Error Notice:<br>".$errorString;
-      }
-      else
-      {
-        $_SESSION["alert_err"] = $errorString;
-        header("location: login.php");
-        exit();
-      }
+
+      $_SESSION["alert_err"] = $errorString;
+      header("location: login.php");
+
     }
     else
     {
@@ -77,18 +63,10 @@
             $_SESSION["user_name"] = $form_username;
             $_SESSION["user_id"] = $row["id"];
 
-            if($processMake){
-              echo "<br>Phase 3: Password Check, process results<br>";
-              echo "Passwords match, should be redirecting to index.php<br>";
-              echo "<br>SESSION var 'user_type':".$_SESSION["user_type"];
-              echo "<br>SESSION var 'user_name':".$_SESSION["user_name"];
-              echo "<br>SESSION var 'user_id':".$_SESSION["user_id"];
-          }
-            else
-            {
-              header("location: index.php");
-              exit();
-            }
+
+
+            header("location: index.php");
+            exit();
 
           }
 
@@ -96,17 +74,10 @@
           {
             $errorString = "ERROR: Passwords do not match.\\n\\nLogin Failed.";
 
-            if($processMake)
-            {
-              echo "<br>Phase 3: Password Check, process results<br>";
-              echo "<br>".$errorString;
-            }
-            else
-            {
-              $_SESSION["alert_err"] = $errorString;
-              header("location: login.php");
-              exit();
-            }
+
+            $_SESSION["alert_err"] = $errorString;
+            header("location: login.php");
+            exit();
           }
         }
       }
