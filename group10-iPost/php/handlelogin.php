@@ -71,7 +71,7 @@
         while($row = $result->fetch_assoc())
         {
           if(password_verify($form_password, $row["password"]))
-          {
+          { //check the user type
             $userType = ($row["user_type"] == 1) ? "admin":"user";
             $_SESSION["user_type"] = $userType;
             $_SESSION["user_name"] = $form_username;

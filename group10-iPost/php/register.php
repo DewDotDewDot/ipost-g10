@@ -1,12 +1,12 @@
 <?php
   include_once("database.php");
-  if (isset($_SESSION["user_type"])) 
+  if (isset($_SESSION["user_type"]))
   {
     header("location: index.php");
     exit();
   }
-  $userType = "user";
   $allowInputRequired = false; //para saan to ronnie
+  $userType = (isset($_POST['userType'])) ? "admin" : "user";
 ?>
 <!DOCTYPE html>
 <html>
@@ -31,10 +31,10 @@
     <?php endif; ?>
 
     <?php if($allowInputRequired):?>//para saan to ronnie
-      
+
       <div class="form-wrapper">
-        <form class="form-main" action="handleRegister.php" method="post">
-        
+        <form class="form-main" action="handleRegister.php?userType=<?php echo userType?>" method="post">
+
         <div class="formItem">
           <h1>Register</h1>
         </div>
@@ -160,11 +160,15 @@ d
             </select>
             </td>
           </tr>
-          <tr>
-            <td colspan="2" style="text-align: center;">
-              <a href="login.php"><p style="color:white">login.</p></a>
+          <?php if($userType === "admin") {?>
+            <tr>
+             <td>Type:</td>
+             <td>
+               <input type="text" name="userType" value="admin" readonly="true">
+             </td>
             </td>
-          </tr>
+            </tr>
+          <?php } ?>
         </table>
         <input type="submit" name="registerForm" value="Register">
         <div class="formItem">
