@@ -7,13 +7,13 @@
     exit();
   }
 
-  elseif ($_SESSION["user_type"] === "admin") 
+  elseif ($_SESSION["user_type"] === "admin")
   {
-    header("location: listofusers.php");
+    header("location: adminindex.php");
     exit();
   }
 
-  elseif ($_SESSION["user_type"] === "user") 
+  elseif ($_SESSION["user_type"] === "user")
   {
     header("location: Post.php");
     exit();

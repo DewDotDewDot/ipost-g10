@@ -1,12 +1,24 @@
 <?php
   include_once("database.php");
-  if (isset($_SESSION["user_type"]))
-  {
-    header("location: index.php");
-    exit();
+
+  $userType = 0;
+  $isAdmin = false;
+  if (isset($_SESSION["user_type"])) {
+    if ($_SESSION["user_type"] == 1) {
+      $isAdmin = true;
+    }
+  }
+  if (isset($_POST['userType'])) {
+    if ($_POST["userType"] == "admin")
+    $isAdmin = true;
+  }
+  if ($isAdmin) {
+    $userType = 1;
+  } else {
+    //header("location: index.php");
+    //exit();
   }
   $allowInputRequired = false; //para saan to ronnie
-  $userType = (isset($_POST['userType'])) ? "admin" : "user";
 ?>
 <!DOCTYPE html>
 <html>
@@ -85,7 +97,6 @@
         <div class="formItem">
           <input type="password" name="password" required>
         </div>
-d
         <div class="formItem">
           <label for="password_confirm">Confirm Password</label>
         </div>
@@ -160,7 +171,7 @@ d
             </select>
             </td>
           </tr>
-          <?php if($userType === "admin") {?>
+          <?php if ($userType == 1) {?>
             <tr>
              <td>Type:</td>
              <td>
