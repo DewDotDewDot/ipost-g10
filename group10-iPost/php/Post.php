@@ -121,25 +121,31 @@
                           </form>
                           </td>
                           <td>
-                          <div class="post-title">
-                            <div class="feed-item">
-                              <img src="<?php echo  "../img/$tmp_profile_pic"; ?>">
-                            </div>
-                            <div class="feed-item">
-                              <h4><?php echo $tmp_username; ?></h2>
-                            </div>
-                            <div class="post-content">
-                              <p><?php echo $tmp_timestamp; ?></p>
+                            <div class="post-title">
+                              <div class="feed-item">
+                                <img src="<?php echo  "../img/$tmp_profile_pic"; ?>">
+                              </div>
+                              <div class="feed-item">
+                                <h4><?php echo $tmp_username; ?></h2>
+                              </div>
+                              <div class="post-content">
+                                <p><?php echo $tmp_timestamp; ?></p>
+                              </div>
                             </div>
                           </td>
                           <td>
-                          </div>
-                          <div class="post-content">
-                            <h2><?php echo $tmp_title; ?></h2>
-                          </div>
-                          <div class="post-content">
-                            <p><?php echo $tmp_content; ?></p>
-                          </div>
+                            <div class="post-content">
+                              <h2><?php echo $tmp_title; ?></h2>
+                            </div>
+                            <div class="post-content">
+                              <p><?php echo $tmp_content; ?></p>
+                            </div>
+                          </td>
+                          //
+                          <td>
+                            <div>
+                              <a href="deleteItem.php?id=<?php echo $tmp_post_id?>&type=post"><h6>Delete</h6></a>
+                            </div>
                           </td>
                         </tr>
                       </table>
