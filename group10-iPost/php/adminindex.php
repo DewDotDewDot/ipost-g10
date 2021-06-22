@@ -10,7 +10,7 @@ echo $_SESSION["user_name"];
 
 
 <a href="register.php"><input value="Register an admin" type="button"></a>
-<a href="Post.php"><input value="View posts" type="button"></a>
+<a href="post.php"><input value="View posts" type="button"></a>
 <a href="userlist.php"><input value="View users" type="button"></a>
 <a href="logout.php"><input value="Log out" type="button"></a>
 

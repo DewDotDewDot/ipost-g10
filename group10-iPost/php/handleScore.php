@@ -27,5 +27,5 @@
   }
     $execScoreUpdateQuery = mysqli_query($sql,$scoreUpdateQuery);
 
-  header("location: Post.php");
+  header("location: post.php");
 ?>

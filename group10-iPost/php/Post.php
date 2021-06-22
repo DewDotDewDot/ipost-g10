@@ -1,6 +1,6 @@
 <?php
   include_once("database.php");
-  if (!isset($_SESSION["user_type"]) || $_SESSION["user_type"] === "admin")
+  if (!isset($_SESSION["user_type"]))
   {
     header("location: index.php");
     exit();
@@ -29,7 +29,7 @@
     <?php endif; ?>
 
       <div class="feed-wrapper">
-        <form class="feed-formPost" action="handlePost.php" method="post">
+        <form class="feed-formPost" action="handlepost.php" method="post">
 
         <h1>Welcome, <?php echo $_SESSION["user_name"]; ?></h1>
         <input type="text" name="title" placeholder="Set your title here" required> <br>
@@ -40,7 +40,7 @@
 
       <h1>See your friends!</h1> <!--feed set-->
         <div class="feed-posts">
-          <form action="Post.php" method="post">
+          <form action="post.php" method="post">
             <select name="sortOption">
               <option value="new">Newest</option>
               <option value="hot">Hottest</option>
@@ -135,7 +135,7 @@
                           </td>
                           <td>
                             <div class="post-content">
-                              <h2><?php echo $tmp_title; ?></h2>
+                              <h2><a href="comments.php?id=<?php echo $tmp_post_id?>"><?php echo $tmp_title; ?></a></h2>
                             </div>
                             <div class="post-content">
                               <p><?php echo $tmp_content; ?></p>

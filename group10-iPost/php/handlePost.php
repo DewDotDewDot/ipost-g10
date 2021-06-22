@@ -13,5 +13,5 @@
   $query = "INSERT INTO tbl_feed (user_id, header, content) VALUES ('$tmp_user_id', '$tmp_feed_title', '$tmp_feed_content')";
   $execQuery = mysqli_query($sql, $query);
 
-  header("location: Post.php");
+  header("location: post.php");
 ?>
