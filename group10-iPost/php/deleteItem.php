@@ -29,7 +29,8 @@ if($_SESSION['user_id'] == $id) {
   header("location: logout.php");
   exit();
 }
-
-header("location: adminindex.php");
-exit();
 ?>
+
+<script>
+history.go(-1);
+</script>
