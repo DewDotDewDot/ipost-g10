@@ -27,5 +27,8 @@
   }
     $execScoreUpdateQuery = mysqli_query($sql,$scoreUpdateQuery);
 
-  header("location: post.php");
 ?>
+
+<script>
+history.go(-1);
+</script>
