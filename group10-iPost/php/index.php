@@ -7,13 +7,13 @@
     exit();
   }
 
-  elseif ($_SESSION["user_type"] === 1)
+  elseif ($_SESSION["user_type"] === 1 || $_SESSION["user_type"] === "admin")
   {
     header("location: adminindex.php");
     exit();
   }
 
-  elseif ($_SESSION["user_type"] === 0)
+  elseif ($_SESSION["user_type"] === 0 || $_SESSION["user_type"] === "user")
   {
     header("location: post.php");
     exit();

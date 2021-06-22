@@ -29,11 +29,11 @@
     <?php endif; ?>
 
       <div class="feed-wrapper">
-        <form class="feed-formPost" action="handlepost.php" method="post">
+        <form class="feed-formPost" action="handlePost.php?type=post" method="post">
 
         <h1>Welcome, <?php echo $_SESSION["user_name"]; ?></h1>
         <input type="text" name="title" placeholder="Set your title here" required> <br>
-        <textarea name="feedPost" rows="4" cols="50" placeholder="Put your text content here" required></textarea>
+        <pre><textarea name="feedPost" rows="4" cols="50" placeholder="Put your text content here" required></textarea></pre>
         <input type="submit" name="feedSubmit" value="Post">
 
         </form>
@@ -141,12 +141,13 @@
                               <p><?php echo $tmp_content; ?></p>
                             </div>
                           </td>
-                          //
+                          <?php if($_SESSION['user_type'] == 1 || $sess_user_id == $tmp_user_id) { ?>
                           <td>
                             <div>
-                              <a href="deleteItem.php?id=<?php echo $tmp_post_id?>&type=post"><h6>Delete</h6></a>
+                              <a href="deleteItem.php?id=<?php echo $tmp_post_id?>&type=post&user_id=<?php echo $tmp_user_id?>"><h6>Delete</h6></a>
                             </div>
                           </td>
+                        <?php } ?>
                         </tr>
                       </table>
                     </div>

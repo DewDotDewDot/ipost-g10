@@ -2,10 +2,13 @@
 include_once("database.php");
 
 try {
-  if ($_SESSION["user_type"] == 0)
+  if ($_SESSION["user_type"] == 0 && !($_GET['user_id'] == $_SESSION['user_id']))
   {
-    header("location: index.php");
-    exit();
+    ?>
+    <script>
+    history.go(-1);
+    </script>
+    <?php
   }
 } catch(Exception $e){
   header("location: index.php");
@@ -21,6 +24,10 @@ if ($type == "post") {
 
 if ($type == "user") {
   $query = "DELETE from tbl_users WHERE id = '$id'";
+}
+
+if ($type == "comment") {
+  $query = "DELETE from tbl_comments WHERE id = '$id'";
 }
 
 $sql->query($query);
