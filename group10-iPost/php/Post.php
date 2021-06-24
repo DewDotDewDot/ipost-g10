@@ -138,7 +138,7 @@
                               <h2><a href="comments.php?id=<?php echo $tmp_post_id?>"><?php echo $tmp_title; ?></a></h2>
                             </div>
                             <div class="post-content">
-                              <p><?php echo $tmp_content; ?></p>
+                              <p><pre><?php echo $tmp_content; ?></pre></p>
                             </div>
                           </td>
                           <?php if($_SESSION['user_type'] == 1 || $sess_user_id == $tmp_user_id) { ?>
