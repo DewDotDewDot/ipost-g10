@@ -32,10 +32,14 @@ if ($type == "comment") {
 
 $sql->query($query);
 
-if($_SESSION['user_id'] == $id) {
+if($_SESSION['user_id'] == $id && $type == "user") {
   header("location: logout.php");
   exit();
 }
+
+if($type == "post")
+header("location: post.php");
+exit();
 ?>
 
 <script>

@@ -106,11 +106,17 @@
                         </div>
                       </td>
                     </tr>
-                      <?php if($_SESSION['user_type'] == 1 || $_SESSION['user_id'] == $tmp_user_id) { ?>
+                    <?php } else { ?>
+                    <h5> This user has their account on private </h5>
+                    <?php }
+                    if($_SESSION['user_type'] == 1 || $_SESSION['user_id'] == $tmp_user_id) { ?>
+                    <tr>
                       <td>
-                        <div>
-                          <a href="editProfile.php?id=<?php echo $tmp_user_id?>&type=user"><h6>Edit</h6></a>
-                        </div>
+                        <?php if($_SESSION['user_id'] == $tmp_user_id) { ?>
+                          <div>
+                            <a href="editProfile.php?id=<?php echo $tmp_user_id?>&type=user"><h6>Edit</h6></a>
+                          </div>
+                        <?php } ?>
                       </td>
                       <td>
                         <div>
@@ -118,9 +124,7 @@
                         </div>
                       </td>
                     </tr>
-                    <?php }} else { ?>
-                      <h5> This user has their account on private </h5>
-                    <?php } ?>
+                  <?php } ?>
                   </table>
                 </div>
             <?php endwhile; ?>
