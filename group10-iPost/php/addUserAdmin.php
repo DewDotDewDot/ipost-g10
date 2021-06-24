@@ -1,6 +1,3 @@
-<?php
-//header("location: register.php?type=admin");
-?>
 <html>
 <title> Add user admin </title>
 <body>
