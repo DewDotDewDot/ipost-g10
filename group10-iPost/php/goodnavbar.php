@@ -16,7 +16,7 @@ include_once("database.php");
         </li>
        <li> <!-- Needs CSS. Search Bar for users-->
          <form action="searchUser.php" method="post">
-           <input type="text" name="username">
+           <input type="text" name="username" required>
            <input type="submit" value="Find user">
          </form>
        </li>

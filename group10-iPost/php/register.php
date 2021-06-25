@@ -92,7 +92,7 @@
           <select name="sex" class="form-select">
             <option value="Male">Male</option>
             <option value="Female">Female</option>
-            <option value="Prefer not to say">Rather not say</option>
+            <option value="Prefer not say">Prefer not say</option>
           </select>
           </td>
         </tr>

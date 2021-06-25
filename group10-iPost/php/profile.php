@@ -108,23 +108,23 @@
                     </tr>
                     <?php } else { ?>
                     <h5> This user has their account on private </h5>
-                    <?php }
-                    if($_SESSION['user_type'] == 1 || $_SESSION['user_id'] == $tmp_user_id) { ?>
+                  <?php } ?>
                     <tr>
                       <td>
                         <?php if($_SESSION['user_id'] == $tmp_user_id) { ?>
                           <div>
-                            <a href="editProfile.php?id=<?php echo $tmp_user_id?>&type=user"><h6>Edit</h6></a>
+                            <a href="editProfileForm.php?id=<?php echo $_SESSION['user_id']?>"><h6>Edit</h6></a>
                           </div>
                         <?php } ?>
                       </td>
                       <td>
+                        <?php if($_SESSION['user_type'] == 1) { ?>
                         <div>
                           <a href="deleteItem.php?id=<?php echo $tmp_user_id?>&type=user"><h6>Delete</h6></a>
                         </div>
+                        <?php } ?>
                       </td>
                     </tr>
-                  <?php } ?>
                   </table>
                 </div>
             <?php endwhile; ?>
