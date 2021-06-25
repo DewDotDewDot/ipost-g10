@@ -14,11 +14,7 @@
   }
   if ($isAdmin) {
     $userType = 1;
-  } else {
-    //header("location: index.php");
-    //exit();
   }
-  $allowInputRequired = false; //para saan to ronnie
 ?>
 <!DOCTYPE html>
 <html>
@@ -42,152 +38,80 @@
       </script>
     <?php endif; ?>
 
-    <?php if($allowInputRequired):?>//para saan to ronnie
+   <div class="form-wrapper">
+     <form class="form-main" action="handleRegister.php" method="post" >
 
-      <div class="form-wrapper">
-        <form class="form-main" action="handleRegister.php?userType=<?php echo userType?>" method="post">
-
-        <div class="formItem">
-          <h1>Register</h1>
-        </div>
-        <div class="formItem">
-          <label for="firstName">First Name</label>
-        </div>
-        <div class="formItem">
-          <input type="text" name="firstName" required>
-        </div>
-
-        <div class="formItem">
-          <label for="lastName">Last Name</label>
-        </div>
-        <div class="formItem">
-          <input type="text" name="lastName" required>
-        </div>
-
-        <div class="formItem">
-          <label for="sex">Sex</label>
-        </div>
-        <div class="formItem">
-          <div>
-            <select name="sex" class="form-select">
-              <option value="Male">Male</option>
-              <option value="Female">Female</option>
-              <option value="Prefer not to say">Rather not say</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="formItem">
-          <label for="email">Email Address</label>
-        </div>
-        <div class="formItem">
-          <input type="email" name="email" required>
-        </div>
-
-        <div class="formItem">
-          <label for="username">Username</label>
-        </div>
-        <div class="formItem">
-          <input type="text" name="username" required>
-        </div>
-
-        <div class="formItem">
-          <label for="password">Password</label>
-        </div>
-        <div class="formItem">
-          <input type="password" name="password" required>
-        </div>
-        <div class="formItem">
-          <label for="password_confirm">Confirm Password</label>
-        </div>
-        <div class="formItem">
-          <input type="password" name="password_confirm" required>
-        </div>
-
-        <div class="formItem">
-          <input type="submit" name="registerForm" value="Register">
-        </div>
-
-        <input type="hidden" name="userType" value="<?php echo $userType; ?>">
-       </form>
-     </div>
-
-   <?php else: ?>
-     <div class="form-wrapper">
-       <form class="form-main" action="handleRegister.php" method="post" >
-
-        <div class="formItem">
-          <h1>Registration</h1>
-        </div>
-        <table id="row-bordered">
+      <div class="formItem">
+        <h1>Registration</h1>
+      </div>
+      <table id="row-bordered">
+        <tr>
+          <td>First name</td>
+          <td>
+            <input type="text" name="firstName" required>
+          </td>
+        </tr>
+        <tr>
+          <td>Last name</td>
+          <td>
+            <input type="text" name="lastName" required>
+          </td>
+        </tr>
+        <tr>
+        <td>Birthdate</td>
+          <td>
+            <input type="date" name="birthdate" required>
+          </td>
+        </tr>
+        <tr>
+        <td>Email</td>
+          <td>
+            <input type="email" name="email" required>
+          </td>
+        </tr>
+        <td>Username</td>
+          <td>
+            <input type="text" name="username" required>
+          </td>
+        </tr>
+        <tr>
+          <td>Password</td>
+          <td>
+            <input type="password" name="password" required>
+          </td>
+        </tr>
+        <tr>
+        	<td>Confirm Password</td>
+        	<td>
+        		<input type="password" name="password_confirm" required="">
+        	</td>
+        </tr>
+        <tr>
+         <td>Sex:</td>
+          <td>
+          <select name="sex" class="form-select">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Prefer not say">Prefer not say</option>
+          </select>
+          </td>
+        </tr>
+        <?php if ($userType == 1) {?>
           <tr>
-            <td>First name</td>
-            <td>
-              <input type="text" name="firstName" required>
-            </td>
+           <td>Type:</td>
+           <td>
+             <input type="text" name="userType" value="admin" readonly="true">
+           </td>
+          </td>
           </tr>
-          <tr>
-            <td>Last name</td>
-            <td>
-              <input type="text" name="lastName" required>
-            </td>
-          </tr>
-          <tr>
-          <td>Birthdate</td>
-            <td>
-              <input type="date" name="birthdate" required>
-            </td>
-          </tr>
-          <tr>
-          <td>Email</td>
-            <td>
-              <input type="email" name="email" required>
-            </td>
-          </tr>
-          <td>Username</td>
-            <td>
-              <input type="text" name="username" required>
-            </td>
-          </tr>
-          <tr>
-            <td>Password</td>
-            <td>
-              <input type="password" name="password" required>
-            </td>
-          </tr>
-          <tr>
-          	<td>Confirm Password</td>
-          	<td>
-          		<input type="password" name="password_confirm" required="">
-          	</td>
-          </tr>
-          <tr>
-           <td>Sex:</td>
-            <td>
-            <select name="sex" class="form-select">
-              <option value="Male">Male</option>
-              <option value="Female">Female</option>
-              <option value="Prefer not to say">Rather not say</option>
-            </select>
-            </td>
-          </tr>
-          <?php if ($userType == 1) {?>
-            <tr>
-             <td>Type:</td>
-             <td>
-               <input type="text" name="userType" value="admin" readonly="true">
-             </td>
-            </td>
-            </tr>
-          <?php } ?>
-        </table>
-        <input type="submit" name="registerForm" value="Register">
-        <div class="formItem">
-        </div>
-       </form>
-     </div>
-    </form>
-     </div>
-   <?php endif; ?>
+        <?php } ?>
+      </table>
+      <input type="submit" name="registerForm" value="Register">
+      <div class="formItem">
+      </div>
+     </form>
+   </div>
+  </form>
+   </div>
   </body>
 </html>

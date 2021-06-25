@@ -106,9 +106,16 @@
                         <h2><?php echo $tmp_title; ?></h2>
                       </div>
                       <div class="post-content">
-                        <p><?php echo $tmp_content; ?></p>
+                        <p><pre><?php echo $tmp_content; ?></pre></p>
                       </div>
                     </td>
+                    <?php if($_SESSION['user_type'] == 1) { ?>
+                    <td>
+                      <div>
+                        <a href="deleteItem.php?id=<?php echo $tmp_post_id?>&type=post&user_id=<?php echo $tmp_user_id?>"><h6>Delete</h6></a>
+                      </div>
+                    </td>
+                  <?php } ?>
                   </tr>
                 </table>
               </div>

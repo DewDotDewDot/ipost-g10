@@ -45,7 +45,7 @@
       $form_birthdate = date('Y-m-d',strtotime($form_birthdate));
       $form_userType = ($form_userType == "admin") ? 1:0;
       $form_password = password_hash($form_password, PASSWORD_DEFAULT);
-      $queryString = "INSERT INTO tbl_users(fname, lname, email, birthdate, sex, username, password, user_type)
+      $queryString = "INSERT INTO tbl_users(fname, lname, birthdate,  email, sex, username, password, user_type)
       VALUES ('$form_firstName','$form_lastName', '$form_birthdate','$form_email','$form_sex','$form_username', '$form_password','$form_userType')";
       $sql->query($queryString);
       $successString = "Registration Successfully Completed! \\n Please log in with your credentials. Welcome to iPost";
