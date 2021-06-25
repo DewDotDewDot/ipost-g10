@@ -15,6 +15,7 @@
         alert("<?php echo $_SESSION['alertMessage']?>");
       </script>
     <?php
+    unset($_SESSION['alertMessage']);
   }
 ?>
 
