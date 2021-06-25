@@ -1,33 +1,33 @@
-.form-wrapper 
+.form-wrapper
 {
-	margin: auto; 
+	margin: auto;
 }
-table 
+table
 {
 	margin: 60px auto;
-	background-color: grey;
+	background-color: transparent;
 	opacity: 90%;
 	border-collapse: collapse;
 	width: 30%;
 	border: 12px grey;
 	padding: 10px;
 }
-table td 
+table td
 {
 	padding: 5px 10px;
 }
-table#row-bordered tr 
+table#row-bordered tr
 {
 	border: 1px solid #050505;
 }
-  
+
 table#cell-bordered td
 {
 	border: 1px solid #050505;
 	padding: 5px 10px;
 }
 
-.form-main 
+.form-main
 {
 	margin: auto;
 	display: flex;
@@ -35,21 +35,22 @@ table#cell-bordered td
 	overflow-y: auto;
 	height: auto;
 	width: 100vw;
-	min-height: 0; 
+	min-height: 0;
+	color: green
 }
 
-.formItem 
+.formItem
 {
-	margin: 5px auto; 
-	color:white;
+	margin: 5px auto;
+	color:black;
 }
 
-.form-select 
+.form-select
 {
 	width: 200px;
-	height: 35px; 
+	height: 35px;
 }
-input 
+input
 {
 	margin-bottom: 5vh auto;
 	border-right: none;
@@ -57,13 +58,13 @@ input
 	border-left: none;
 	background-color: transparent;
 	outline: none;
-	color: white;
-	caret-color: white;
+	color: green;
+	caret-color: green;
 	padding: 6px;
-	font-size: 20px; 
+	font-size: 20px;
 }
 
-input[type=submit] 
+input[type=submit]
 {
 	background: black;
 	margin: auto;
@@ -76,5 +77,5 @@ input[type=submit]
 }
 label
 {
-	font-size: 15px; 
+	font-size: 15px;
 }

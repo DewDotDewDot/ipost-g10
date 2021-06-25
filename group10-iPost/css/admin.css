@@ -1,7 +1,11 @@
 body
 {
-	background-image: url(../img/obob_ak_isak.jpg);
+	background-image: url(../img/gravity.jpg);
 	background-repeat: no-repeat;
   background-position: center;
-  background-size: fix;
+  background-size: cover;
+	text-align-last: center;
+}
+h1{
+	color:white;
 }

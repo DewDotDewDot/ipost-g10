@@ -15,6 +15,7 @@ include_once("database.php");
           <a class="nav-link active" aria-current="page" href="profile.php?id=<?php echo $_SESSION['user_id'] ?>">Profile</a>
         </li>
        <li> <!-- Needs CSS. Search Bar for users-->
+         <!-- tangina mo  -->
          <form action="searchUser.php" method="post">
            <input type="text" name="username" required>
            <input type="submit" value="Find user">
