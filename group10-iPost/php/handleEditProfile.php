@@ -41,4 +41,18 @@
     header("location: editProfileForm.php?id=" . $id);
     exit();
   }
+
+  $tmp_username = $_POST['username'];
+  $tmp_fname = $_POST['fname'];
+  $tmp_lname = $_POST['lname'];
+  $tmp_email = $_POST['email'];
+  $tmp_birthdate = date('Y-m-d',strtotime($_POST['birthdate']));
+  $tmp_sex = $_POST['sex'];
+
+
+  $query = "UPDATE tbl_users SET `username` = '$tmp_username', `fname` = '$tmp_fname', `lname` = '$tmp_lname', `sex` = '$tmp_sex', `email` = '$tmp_email', `birthdate` = '$tmp_birthdate' WHERE `id` = '$id'";
+  $sql->query($query);
+  $_SESSION['user_name'] = $tmp_username;
+  header("location: editProfileForm.php?id=" . $id);
+  exit();
 ?>
