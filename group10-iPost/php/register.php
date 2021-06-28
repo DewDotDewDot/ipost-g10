@@ -1,6 +1,8 @@
 <?php
   include_once("database.php");
 
+  $_SESSION['not_register'] = false;
+
   $userType = 0;
   $isAdmin = false;
   if (isset($_SESSION["user_type"])) {

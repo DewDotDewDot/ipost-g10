@@ -9,6 +9,7 @@
 
   elseif ($_SESSION["user_type"] === 1 || $_SESSION["user_type"] === "admin")
   {
+    $_SESSION['not_register'] = true;
     header("location: adminindex.php");
     exit();
   }
