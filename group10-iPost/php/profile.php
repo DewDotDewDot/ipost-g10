@@ -60,7 +60,7 @@
                 $tmp_privacy = $row["privacy"];
               ?>
 
-                <div class="feed-itemsWrapper">
+                <div class="profile_info">
                   <table>
                     <tr>
                       <td colspan="2">
@@ -158,7 +158,7 @@
                    $tmp_username = $row2["username"];
                  ?>
 
-                   <div class="feed-itemsWrapper">
+                   <div class="profile_info">
                      <table>
                        <tr>
                          <td>
@@ -207,7 +207,7 @@
                          </td>
                          <td>
                            <div class="post-content">
-                             <h2><a href="comments.php?id=<?php echo $tmp_post_id?>"><?php echo $tmp_title; ?></a></h2>
+                             <h2><a class="post_title" href="comments.php?id=<?php echo $tmp_post_id?>"><?php echo $tmp_title; ?></a></h2>
                            </div>
                            <?php if (isset($tmp_image)) { ?>
                            <div>

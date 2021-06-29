@@ -58,22 +58,19 @@ if($result = $sql->query($query)):
       $tmp_username = $row["username"];
       $tmp_user_type = $row["user_type"];
     ?>
-
+    <div class="profile_info">
         <tr>
           <td>
-            <div class="feed-item">
               <img class="profile_pic" src="<?php echo  "../img_assets/pfp/$tmp_profile_pic"; ?>">
-            </div>
+
           </td>
           <td>
-            <div class="feed-item">
-              <a href="profile.php?id=<?php echo $tmp_user_id ?>"><p><?php echo $tmp_username; ?><p></a>
-            </div>
+              <a class="post_title" href="profile.php?id=<?php echo $tmp_user_id ?>"><p><?php echo $tmp_username; ?><p></a>
+
           </td>
           <td>
-            <div class="post-content">
               <p><?php echo ($tmp_user_type = 0) ? "User" : "Admin"; ?></p>
-            </div>
+
           </td>
           <td>
             <a href="deleteItem.php?id=<?php echo $tmp_user_id?>&type=user"><p>Delete</p></a>

@@ -12,11 +12,11 @@ h1{
   height: 80px;
   width: 80px;
 }
-.sort{
+.sort, .profile_info, .post_title{
   color:white;
 }
-.profile_info{
-  color:white;
+.post_title{
+  text-decoration:none;
 }
 .post_image{
    width:1920px;

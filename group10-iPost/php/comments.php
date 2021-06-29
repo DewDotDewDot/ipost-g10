@@ -94,7 +94,7 @@
                           <img class="profile_pic" src="<?php echo  "../img_assets/pfp/$tmp_profile_pic"; ?>">
                         </div>
                         <div class="feed-item">
-                          <a href="profile.php?id=<?php echo $tmp_user_id ?>"><h4><?php echo $tmp_username; ?></h4></a>
+                          <a class="post_title" href="profile.php?id=<?php echo $tmp_user_id ?>"><h4><?php echo $tmp_username; ?></h4></a>
                         </div>
                         <div class="post-content">
                           <p><?php echo $tmp_timestamp; ?></p>
@@ -103,7 +103,7 @@
                     </td>
                     <td>
                       <div class="post-content">
-                        <h2><?php echo $tmp_title; ?></h2>
+                        <h2 class="post_title"><?php echo $tmp_title; ?></h2>
                       </div>
                       <div class="post-content">
                         <p><pre><?php echo $tmp_content; ?></pre></p>
@@ -166,10 +166,10 @@
                           <td>
                             <div class="post-title">
                               <div class="feed-item">
-                                <img src="<?php echo  "../img/$tmp_profile_pic"; ?>">
+                                <img class="profile_pic" src="<?php echo  "../img_assets/pfp/$tmp_profile_pic"; ?>">
                               </div>
                               <div class="feed-item">
-                                <a class="profile_pic" href="profile.php?id=<?php echo $tmp_user_id ?>"><h4><?php echo $tmp_username; ?></h4></a>
+                                <a class="post_title" href="profile.php?id=<?php echo $tmp_user_id ?>"><h4><?php echo $tmp_username; ?></h4></a>
                               </div>
                               <div class="post-content">
                                 <p><?php echo $tmp_timestamp; ?></p>
