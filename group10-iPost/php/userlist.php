@@ -62,7 +62,7 @@ if($result = $sql->query($query)):
         <tr>
           <td>
             <div class="feed-item">
-              <img src="<?php echo  "../img/$tmp_profile_pic"; ?>">
+              <img src="<?php echo  "../img_assets/pfp/$tmp_profile_pic"; ?>">
             </div>
           </td>
           <td>
