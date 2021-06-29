@@ -68,14 +68,18 @@
               ?>
 
                 <div class="feed-itemsWrapper">
-                  <!--><form action="handleEditProfile.php?id=<?php echo $tmp_user_id ?>" method="post"><!-->
                   <table>
                     <tr>
                       <td colspan="2">
                         <div>
+                          <form action='handleEditProfile.php?changePfp=1&id=<?php echo $tmp_user_id ?>' method='POST' enctype='multipart/form-data'>
                           <div>
-                            <img src="<?php echo  "../img/$tmp_profile_pic"; ?>" required>
+                            <img src="<?php echo  "../img_assets/pfp/$tmp_profile_pic"; ?>">
+                            <input type="file" name="profile_pic" accept="image/*" required>
+                            <input type="submit" value="Change Profile Picture">
                           </div>
+                          </form>
+                          <form action="handleEditProfile.php?id=<?php echo $tmp_user_id ?>" method="post">
                           <div>
                             <h6>Username: </h6>
                             <input type="text" name="username" value="<?php echo $tmp_username; ?>" required>

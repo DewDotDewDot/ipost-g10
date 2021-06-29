@@ -42,6 +42,46 @@
     exit();
   }
 
+  if(isset($_GET['changePfp'])) {
+
+    $targetDirectory = "../img_assets/pfp/";
+        if(!empty($_FILES["profile_pic"])){
+            if(empty($_FILES["tmp_name"])){
+                header("location: editProfileForm.php?id=" . $id);
+            }
+            $fileName = $_FILES["profile_pic"]["name"];
+            $check = getimagesize($_FILES["profile_pic"]["tmp_name"]);
+            if ($check) {
+                echo "File is an image!";
+                $newFileName = $id . "" . $fileName;
+                $destination = $targetDirectory . $newFileName;
+                echo "<h2>Destination: $destination</h2>";
+
+                $upload = move_uploaded_file($_FILES["profile_pic"]["tmp_name"], $destination);
+                if ($upload) {
+                    echo "<h2> Upload was successful! </h2>";
+
+                    $query = "UPDATE tbl_users SET profile_pic = '$newFileName' WHERE id = '$id'";
+                    $sql->query($query);
+                }
+                else {
+                    echo "<h4>Uh-oh! Something went wrong </h4>";
+                }
+            }
+            else {
+                echo "<h4>File is NOT an image!</h4>";
+            }
+        }
+        else {
+            header("location: editProfileForm.php?id=" . $id);
+        }
+    }
+
+    header("location: editProfileForm.php?id=" . $id);
+    exit();
+
+
+
   $tmp_username = $_POST['username'];
   $tmp_fname = $_POST['fname'];
   $tmp_lname = $_POST['lname'];
