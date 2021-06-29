@@ -1,5 +1,5 @@
 <div class="navbar-main">
-  <nav>
+  <nav class="navbg navbar">
     <ul>
       <?php if(!isset($_SESSION["user_type"])): ?>
         <li> <a href="index.php">IPOST</a> </li>

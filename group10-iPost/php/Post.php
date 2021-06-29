@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="../css/navbar.css" type="text/css">
     <link rel="stylesheet" href="../css/Post.css" type="text/css">
     <link rel="stylesheet" href="../css/comments.css" type="text/css">
+    <link rel="stylesheet" href="../css/nav.css" type="text/css">
   </head>
   <body>
     <?php include_once("goodnavbar.php"); ?>

@@ -1,22 +1,22 @@
 body
 {
-  background-color: black;
+  background-color: #0B5172;
 }
 h1{
-  color:white;
+  color:#C6CDD1;
 }
 .post-content{
-  color:white;
+  color:black;
 }
 .profile_pic{
   height: 80px;
   width: 80px;
 }
 .sort{
-  color:white;
+  color:black;
 }
 .profile_info{
-  color:white;
+  color:black;
 }
 .post_image{
    width:1920px;
