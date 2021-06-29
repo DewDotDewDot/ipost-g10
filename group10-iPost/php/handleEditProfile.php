@@ -53,7 +53,7 @@
             $check = getimagesize($_FILES["profile_pic"]["tmp_name"]);
             if ($check) {
                 echo "File is an image!";
-                $newFileName = $id . "" . $fileName;
+                $newFileName = $id . $fileName;
                 $destination = $targetDirectory . $newFileName;
                 echo "<h2>Destination: $destination</h2>";
 
@@ -75,10 +75,11 @@
         else {
             header("location: editProfileForm.php?id=" . $id);
         }
+      header("location: editProfileForm.php?id=" . $id);
+      exit();
     }
 
-    header("location: editProfileForm.php?id=" . $id);
-    exit();
+
 
 
 

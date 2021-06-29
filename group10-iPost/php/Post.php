@@ -30,11 +30,12 @@
     <?php endif; ?>
 
       <div class="feed-wrapper">
-        <form class="feed-formPost" action="handlePost.php?type=post" method="post">
+        <form class="feed-formPost" action="handlePost.php?type=post" method="post" enctype='multipart/form-data'>
 
         <h1>Welcome, <?php echo $_SESSION["user_name"]; ?></h1>
         <input type="text" name="title" placeholder="Set your title here" required> <br>
         <pre><textarea name="feedPost" rows="4" cols="50" placeholder="Put your text content here" required></textarea></pre>
+        <input type="file" name="feed_pic" accept="image/*">
         <input type="submit" name="feedSubmit" value="Post">
 
         </form>
@@ -67,10 +68,14 @@
           if($result = $sql->query($sortQuery)): ?>
             <?php while($row = $result->fetch_assoc()): ?>
               <?php
+                unset($tmp_image);
                 $tmp_post_id = $row["id"];
                 $tmp_content = $row["content"];
                 $tmp_user_id = $row["user_id"];
                 $tmp_title = $row["header"];
+                if (!is_null($row["image"])) {
+                $tmp_image = $row["image"];
+                }
                 $tmp_timestamp = $row["timestamp"];
                 $tmp_score = $row["like_score"];
               ?>
@@ -123,9 +128,9 @@
                           </td>
                           <td>
                             <div class="post-title">
-                              <div class="feed-item">
-                                <img src="<?php echo  "../img_assets/pfp/$tmp_profile_pic"; ?>">
-                              </div>
+                                <div class="feed-item">
+                                  <img src="<?php echo  "../img_assets/pfp/$tmp_profile_pic"; ?>">
+                                </div>
                               <div class="feed-item">
                                 <h4><?php echo $tmp_username; ?></h2>
                               </div>
@@ -138,6 +143,11 @@
                             <div class="post-content">
                               <h2><a href="comments.php?id=<?php echo $tmp_post_id?>"><?php echo $tmp_title; ?></a></h2>
                             </div>
+                            <?php if (isset($tmp_image)) { ?>
+                            <div>
+                              <img src="<?php echo  "../img_assets/posts/$tmp_image"; ?>">
+                            </div>
+                          <?php } ?>
                             <div class="post-content">
                               <p><pre><?php echo $tmp_content; ?></pre></p>
                             </div>
