@@ -148,7 +148,7 @@
                             </div>
                             <?php if (isset($tmp_image)) { ?>
                             <div>
-                              <img src="<?php echo  "../img_assets/posts/$tmp_image"; ?>">
+                              <img class="profile_pic" src="<?php echo  "../img_assets/posts/$tmp_image"; ?>">
                             </div>
                           <?php } ?>
                             <div class="post-content">
