@@ -67,7 +67,7 @@
                 $privacy_str = ($tmp_privacy == 0) ? "off" : "on";
               ?>
 
-                <div class="feed-itemsWrapper">
+                <div class="profile_info">
                   <table>
                     <tr>
                       <td colspan="2">

@@ -12,11 +12,14 @@ h1{
   height: 80px;
   width: 80px;
 }
-.sort{
-  color:black;
+<<<<<<< HEAD
+=======
+.sort, .profile_info, .post_title{
+  color:white;
 }
-.profile_info{
-  color:black;
+.post_title{
+  text-decoration:none;
+>>>>>>> de4ae2640ec16e781e6af3320f3f6648623eb7e8
 }
 .post_image{
    width:1920px;

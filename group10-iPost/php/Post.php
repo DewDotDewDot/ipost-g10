@@ -136,7 +136,7 @@
                                   <img class="profile_pic" src="<?php echo  "../img_assets/pfp/$tmp_profile_pic"; ?>">
                                 </div>
                               <div class="feed-item">
-                                <a href="profile.php?id=<?php echo $tmp_user_id ?>"><h4><?php echo $tmp_username; ?></h4></a>
+                                <a class="post_title" href="profile.php?id=<?php echo $tmp_user_id ?>"><h4><?php echo $tmp_username; ?></h4></a>
                               </div>
                               <div class="post-content">
                                 <p><?php echo $tmp_timestamp; ?></p>
@@ -145,7 +145,7 @@
                           </td>
                           <td>
                             <div class="post-content">
-                              <h2><a href="comments.php?id=<?php echo $tmp_post_id?>"><?php echo $tmp_title; ?></a></h2>
+                              <h2><a class="post_title" href="comments.php?id=<?php echo $tmp_post_id?>"><?php echo $tmp_title; ?></a></h2>
                             </div>
                             <?php if (isset($tmp_image)) { ?>
                             <div>
