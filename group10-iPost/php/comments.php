@@ -94,7 +94,7 @@
                           <img src="<?php echo  "../img_assets/pfp/$tmp_profile_pic"; ?>">
                         </div>
                         <div class="feed-item">
-                          <h4><?php echo $tmp_username; ?></h2>
+                          <a href="profile.php?id=<?php echo $tmp_user_id ?>"><h4><?php echo $tmp_username; ?></h4></a>
                         </div>
                         <div class="post-content">
                           <p><?php echo $tmp_timestamp; ?></p>
@@ -109,7 +109,7 @@
                         <p><pre><?php echo $tmp_content; ?></pre></p>
                       </div>
                     </td>
-                    <?php if($_SESSION['user_type'] == 1) { ?>
+                    <?php if($_SESSION['user_type'] == 1 || $tmp_user_id == $_SESSION['user_id']) { ?>
                     <td>
                       <div>
                         <a href="deleteItem.php?id=<?php echo $tmp_post_id?>&type=post&user_id=<?php echo $tmp_user_id?>"><h6>Delete</h6></a>
@@ -169,7 +169,7 @@
                                 <img src="<?php echo  "../img/$tmp_profile_pic"; ?>">
                               </div>
                               <div class="feed-item">
-                                <h4><?php echo $tmp_username; ?></h2>
+                                <a href="profile.php?id=<?php echo $tmp_user_id ?>"><h4><?php echo $tmp_username; ?></h4></a>
                               </div>
                               <div class="post-content">
                                 <p><?php echo $tmp_timestamp; ?></p>

@@ -138,9 +138,13 @@
          if($result = $sql->query($query)): ?>
            <?php while($row = $result->fetch_assoc()): ?>
              <?php
+              unset($tmp_image);
                $tmp_post_id = $row["id"];
                $tmp_content = $row["content"];
                $tmp_user_id = $row["user_id"];
+               if (!is_null($row["image"])) {
+               $tmp_image = $row["image"];
+               }
                $tmp_title = $row["header"];
                $tmp_timestamp = $row["timestamp"];
                $tmp_score = $row["like_score"];
@@ -205,6 +209,11 @@
                            <div class="post-content">
                              <h2><a href="comments.php?id=<?php echo $tmp_post_id?>"><?php echo $tmp_title; ?></a></h2>
                            </div>
+                           <?php if (isset($tmp_image)) { ?>
+                           <div>
+                             <img src="<?php echo  "../img_assets/posts/$tmp_image"; ?>">
+                           </div>
+                          <?php } ?>
                            <div class="post-content">
                              <p><pre><?php echo $tmp_content; ?></pre></p>
                            </div>

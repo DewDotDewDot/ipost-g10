@@ -132,7 +132,7 @@
                                   <img src="<?php echo  "../img_assets/pfp/$tmp_profile_pic"; ?>">
                                 </div>
                               <div class="feed-item">
-                                <h4><?php echo $tmp_username; ?></h2>
+                                <a href="profile.php?id=<?php echo $tmp_user_id ?>"><h4><?php echo $tmp_username; ?></h4></a>
                               </div>
                               <div class="post-content">
                                 <p><?php echo $tmp_timestamp; ?></p>
@@ -160,6 +160,7 @@
                           </td>
                         <?php } ?>
                         </tr>
+                        <hr>
                       </table>
                     </div>
 
