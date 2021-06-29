@@ -96,7 +96,7 @@
                     <div class="feed-itemsWrapper">
                       <table>
                         <tr>
-                          <td>
+                          <td class="post_header">
                           <form action="handleScore.php?post_id=<?php echo $tmp_post_id?>" method="post">
                             <div class="post-content">
                               <?php
@@ -130,7 +130,7 @@
                             </div>
                           </form>
                           </td>
-                          <td>
+                          <td class="post_header">
                             <div class="post-title">
                                 <div class="feed-item">
                                   <img class="profile_pic" src="<?php echo  "../img_assets/pfp/$tmp_profile_pic"; ?>">
