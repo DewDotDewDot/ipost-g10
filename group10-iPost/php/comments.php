@@ -169,7 +169,7 @@
                                 <img src="<?php echo  "../img/$tmp_profile_pic"; ?>">
                               </div>
                               <div class="feed-item">
-                                <a href="profile.php?id=<?php echo $tmp_user_id ?>"><h4><?php echo $tmp_username; ?></h4></a>
+                                <a class="profile_pic" href="profile.php?id=<?php echo $tmp_user_id ?>"><h4><?php echo $tmp_username; ?></h4></a>
                               </div>
                               <div class="post-content">
                                 <p><?php echo $tmp_timestamp; ?></p>

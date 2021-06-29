@@ -132,7 +132,7 @@
                           <td>
                             <div class="post-title">
                                 <div class="feed-item">
-                                  <img src="<?php echo  "../img_assets/pfp/$tmp_profile_pic"; ?>">
+                                  <img class="profile_pic" src="<?php echo  "../img_assets/pfp/$tmp_profile_pic"; ?>">
                                 </div>
                               <div class="feed-item">
                                 <a href="profile.php?id=<?php echo $tmp_user_id ?>"><h4><?php echo $tmp_username; ?></h4></a>
@@ -148,7 +148,7 @@
                             </div>
                             <?php if (isset($tmp_image)) { ?>
                             <div>
-                              <img class="profile_pic" src="<?php echo  "../img_assets/posts/$tmp_image"; ?>">
+                              <img class="post_image" src="<?php echo  "../img_assets/posts/$tmp_image"; ?>">
                             </div>
                           <?php } ?>
                             <div class="post-content">

@@ -74,7 +74,7 @@
                         <div>
                           <form action='handleEditProfile.php?changePfp=1&id=<?php echo $tmp_user_id ?>' method='POST' enctype='multipart/form-data'>
                           <div>
-                            <img src="<?php echo  "../img_assets/pfp/$tmp_profile_pic"; ?>">
+                            <img class="profile_pic" src="<?php echo  "../img_assets/pfp/$tmp_profile_pic"; ?>">
                             <input type="file" name="profile_pic" accept="image/*" required>
                             <input type="submit" value="Change Profile Picture">
                           </div>

@@ -66,7 +66,7 @@
                       <td colspan="2">
                         <div>
                           <div>
-                            <img src="<?php echo  "../img_assets/pfp/$tmp_profile_pic"; ?>">
+                            <img class="profile_pic" src="<?php echo  "../img_assets/pfp/$tmp_profile_pic"; ?>">
                           </div>
                           <div>
                             <h6>Username: <?php echo $tmp_username; ?></h6>
