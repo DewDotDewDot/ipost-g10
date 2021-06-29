@@ -9,8 +9,9 @@ h1{
   color:white;
 }
 .profile_pic{
-width: 28px;
+  height: 32px;
+  width: 28px;
 }
-.feed_posts{
+.sort{
   color:white;
 }
