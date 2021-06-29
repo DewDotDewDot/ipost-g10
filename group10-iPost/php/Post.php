@@ -36,7 +36,7 @@
         <h1>Welcome, <?php echo $_SESSION["user_name"]; ?></h1>
         <input type="text" name="title" placeholder="Set your title here" required> <br>
         <pre><textarea name="feedPost" rows="4" cols="50" placeholder="Put your text content here" required></textarea></pre>
-        <input type="file" name="feed_pic" accept="image/*">
+        <input class="post-content" type="file" name="feed_pic" accept="image/*">
         <input type="submit" name="feedSubmit" value="Post">
 
         </form>
@@ -136,7 +136,7 @@
                                   <img class="profile_pic" src="<?php echo  "../img_assets/pfp/$tmp_profile_pic"; ?>">
                                 </div>
                               <div class="feed-item">
-                                <a class="post_title" href="profile.php?id=<?php echo $tmp_user_id ?>"><h4><?php echo $tmp_username; ?></h4></a>
+                                <a class="post_title"  href="profile.php?id=<?php echo $tmp_user_id ?>"><h4><?php echo $tmp_username; ?></h4></a>
                               </div>
                               <div class="post-content">
                                 <p><?php echo $tmp_timestamp; ?></p>
