@@ -4,13 +4,15 @@
 }
 table
 {
-	margin: 60px auto;
+	margin: 50px;
+	margin-left: 10px;
 	background-color: transparent;
 	opacity: 90%;
 	border-collapse: collapse;
 	width: 30%;
 	border: 12px grey;
 	padding: 10px;
+
 }
 table td
 {
@@ -36,7 +38,7 @@ table#cell-bordered td
 	height: auto;
 	width: 100vw;
 	min-height: 0;
-	color: green
+	color: black
 }
 
 .formItem
@@ -58,15 +60,15 @@ input
 	border-left: none;
 	background-color: transparent;
 	outline: none;
-	color: green;
-	caret-color: green;
+	color: black;
+	caret-color: black;
 	padding: 6px;
 	font-size: 20px;
 }
 
 input[type=submit]
 {
-	background: black;
+	background:white;
 	margin: auto;
 	margin-top: 30px;
 	width: 20%;

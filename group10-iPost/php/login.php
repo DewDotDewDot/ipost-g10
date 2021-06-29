@@ -85,7 +85,7 @@
 
           <tr>
             <td colspan="2" style="text-align: center;">
-            <a href="register.php"><p style="color:white"> Register Now!</p></a>
+            <a href="register.php"><p style="color:black"> Register Now!</p></a>
             </td>
           </tr>
 
