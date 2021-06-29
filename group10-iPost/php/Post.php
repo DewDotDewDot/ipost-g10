@@ -124,7 +124,7 @@
                           <td>
                             <div class="post-title">
                               <div class="feed-item">
-                                <img src="<?php echo  "../img/$tmp_profile_pic"; ?>">
+                                <img src="<?php echo  "../img_assets/pfp/$tmp_profile_pic"; ?>">
                               </div>
                               <div class="feed-item">
                                 <h4><?php echo $tmp_username; ?></h2>

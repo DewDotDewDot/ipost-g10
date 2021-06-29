@@ -66,7 +66,7 @@
                       <td colspan="2">
                         <div>
                           <div>
-                            <img src="<?php echo  "../img/$tmp_profile_pic"; ?>">
+                            <img src="<?php echo  "../img_assets/pfp/$tmp_profile_pic"; ?>">
                           </div>
                           <div>
                             <h6>Username: <?php echo $tmp_username; ?></h6>
@@ -152,7 +152,6 @@
 
                  <?php
                    $tmp_username = $row2["username"];
-                   $tmp_profile_pic = $row2["profile_pic"];
                  ?>
 
                    <div class="feed-itemsWrapper">
@@ -194,9 +193,6 @@
                          </td>
                          <td>
                            <div class="post-title">
-                             <div class="feed-item">
-                               <img src="<?php echo  "../img/$tmp_profile_pic"; ?>">
-                             </div>
                              <div class="feed-item">
                                <h4><?php echo $tmp_username; ?></h2>
                              </div>
