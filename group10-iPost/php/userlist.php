@@ -33,7 +33,7 @@ try {
     </script>
   <?php endif; ?>
 
-  <div class="feed-itemsWrapper">
+  <div class="post-content">
     <table>
       <tr>
         <th>
@@ -69,7 +69,7 @@ if($result = $sql->query($query)):
 
           </td>
           <td>
-              <p><?php echo ($tmp_user_type = 0) ? "User" : "Admin"; ?></p>
+              <p><?php echo ($tmp_user_type == 0) ? "User" : "Admin"; ?></p>
 
           </td>
           <td>
