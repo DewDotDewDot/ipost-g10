@@ -1,6 +1,5 @@
-body
-{
-	background-image: url(../img/nasa.jpg);
+body {
+	background-image: url(../img/login_bg.gif);
 	background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
