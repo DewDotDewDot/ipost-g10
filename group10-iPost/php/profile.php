@@ -131,7 +131,7 @@
           <?php endif; ?>
 
        <h1>Posts: </h1>
-       <?php if($tmp_privacy == 0 || $_SESSION['user_id'] == $tmp_user_id) {
+       <?php
 
          $query = "SELECT * FROM tbl_feed WHERE user_id = '$tmp_user_id' ORDER BY timestamp DESC";
 
@@ -233,10 +233,6 @@
              <?php endif; ?>
            <?php endwhile; ?>
          <?php endif; ?>
-
-       <?php } else { ?>
-         <h5> This user has their account on private </h5>
-       <?php } ?>
        </div>
     </div>
   </body>
