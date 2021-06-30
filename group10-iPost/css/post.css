@@ -3,17 +3,17 @@ body
   background-color: #1b1f26;
 }
 h1{
-  color:#C6CDD1;
+  color:##ccc9bc;
 }
 .post-content{
-  color: #C6CDC0;
+  color: ##ccc9bc;
 }
 .profile_pic{
   height: 80px;
   width: 80px;
 }
 .sort, .profile_info, .post_title{
-  color: #C6CDD0;
+  color: ##ccc9bc;
 }
 .post_title{
   text-decoration:none;
