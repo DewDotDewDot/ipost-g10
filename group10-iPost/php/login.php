@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="../css/navbar.css" type="text/css">
     <link rel="stylesheet" type="text/css" href="../css/body.css">
     <link rel="stylesheet" href="../css/nav.css" type="text/css">
+    <link rel="stylesheet" href="../css/post.css" type="text/css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
    </head>
    <body>
@@ -86,7 +87,7 @@
 
           <tr>
             <td colspan="2" style="text-align: center;">
-            <a href="register.php"><p style="color:black"> Register Now!</p></a>
+            <a style="color: #6495ED; text-decoration: none;" href="register.php"><p> Register Now!</p></a>
             </td>
           </tr>
 

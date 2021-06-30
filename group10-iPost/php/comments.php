@@ -17,7 +17,7 @@
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../css/navbar.css" type="text/css">
-    <link rel="stylesheet" href="../css/Post.css" type="text/css">
+    <link rel="stylesheet" href="../css/post.css" type="text/css">
   </head>
   <body>
     <?php include_once("goodnavbar.php"); ?>
@@ -37,6 +37,9 @@
           $tmp_post_id = $row["id"];
           $tmp_content = $row["content"];
           $tmp_user_id = $row["user_id"];
+          if (!is_null($row["image"])) {
+          $tmp_image = $row["image"];
+          }
           $tmp_title = $row["header"];
           $tmp_timestamp = $row["timestamp"];
           $tmp_score = $row["like_score"];
@@ -105,6 +108,11 @@
                       <div class="post-content">
                         <h2 class="post_title"><?php echo $tmp_title; ?></h2>
                       </div>
+                      <?php if (isset($tmp_image)) { ?>
+                      <div>
+                        <img class="post_image" src="<?php echo  "../img_assets/posts/$tmp_image"; ?>">
+                      </div>
+                    <?php } ?>
                       <div class="post-content">
                         <p><pre><?php echo $tmp_content; ?></pre></p>
                       </div>
@@ -166,7 +174,7 @@
                           <td>
                             <div class="post-title">
                               <div class="feed-item">
-                                <img class="profile_pic" src="<?php echo  "../img_assets/pfp/$tmp_profile_pic"; ?>">
+                                <img  class="profile_pic" src="<?php echo  "../img_assets/pfp/$tmp_profile_pic"; ?>">
                               </div>
                               <div class="feed-item">
                                 <a class="post_title" href="profile.php?id=<?php echo $tmp_user_id ?>"><h4><?php echo $tmp_username; ?></h4></a>
@@ -178,7 +186,7 @@
                           </td>
                           <td>
                             <div class="post-content">
-                              <p><?php echo $tmp_comment; ?></p>
+                              <p><pre><?php echo $tmp_comment; ?></pre></p>
                             </div>
                           </td>
                           <?php if($_SESSION['user_type'] == 1 || $sess_user_id == $tmp_user_id) { ?>
