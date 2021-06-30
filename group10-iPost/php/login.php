@@ -97,19 +97,11 @@
               </td>
             </tr>
 
-<<<<<<< HEAD
-          <tr>
-            <td colspan="2" style="text-align: center;">
-            <a style="color: #6495ED; text-decoration: none;" href="register.php"><p> Register Now!</p></a>
-            </td>
-          </tr>
-=======
             <tr>
               <td colspan="2" style="text-align: center;">
               <input type="submit" class="loginForm" name="loginForm" value="Log In">
               </td>
             </tr>
->>>>>>> a89184d0877134f0dcc6db61cd1726bff428ea76
 
             <tr>
               <td colspan="2" style="text-align: center;">
