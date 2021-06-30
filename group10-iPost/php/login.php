@@ -22,8 +22,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
    </head>
    <body>
-    <!--Navbar-->
-     <?php include_once("goodnavbar.php"); ?>
+<!--Navigation Bar-->
+      <?php include_once("goodnavbar.php"); ?>
       <?php if(isset($_SESSION["alert_err"])): ?>
         <script type="text/javascript">
           var alertNotice = '<?php echo $_SESSION["alert_err"]; ?>';
@@ -41,66 +41,86 @@
       <?php endif; ?>
 
    <?php if($allowInputRequired): ?>
-    <div class="form-wrapper">
-      <form class="form-main" action="handlelogin.php" method="post" >
-        <div class="formItem">
-          <h1>Log In</h1>
-        </div>
-        <div class="formItem">
-          <label for="username">Username</label>
-        </div>
-        <div class="formItem">
-          <input type="text" name="username" required>
-        </div>
+     <section class="frontal">
+      <div class="intro">
+        <h1 class="iPost">IPOST</h1>
+        <p class="desc">A virtual community where you can discuss, view,
+          and react to any post that can see with your friends.
+          Meet with new people through the internet with iPost</p>
+      </div>
+      <div class="form-wrapper">
+        <form class="form-main" action="handlelogin.php" method="post" >
+          <div class="formItem">
+            <label for="username">Username</label>
+          </div>
+          <div class="formItem">
+            <input type="text" name="username" required>
+          </div>
 
-        <div class="formItem">
-          <label for="password">Password</label>
-        </div>
-        <div class="formItem">
-          <input type="password" name="password" required>
-        </div>
+          <div class="formItem">
+            <label for="password">Password</label>
+          </div>
+          <div class="formItem">
+            <input type="password" name="password" required>
+          </div>
 
-        <div class="formItem">
-          <input type="submit" name="loginForm" value="Log In">
-        </div>
+          <div class="formItem">
+            <input type="submit" name="loginForm" value="Log In">
+          </div>
 
-      </form>
-    </div>
+        </form>
+      </div>
+    </section>
 
    <?php else: ?>
-     <div class="form-wrapper">
-       <form class="form-main" action="handleLogin.php" method="post" >
-       	<table id="row-bordered">
-          <tr>
-            <td>Username</td>
-            <td>
-              <input type="text" name="username" required>
-            </td>
-          </tr>
+     <section class="frontal">
+      <div class="intro">
+        <h1 class="name">IPOST</h1>
+        <p class="desc">A virtual community where you can discuss, view,
+          and react to any post that can see with your friends.
+          Meet with new people through the internet with iPost</p>
+      </div>
+      <div class="form-wrapper">
+         <form class="form-main" action="handleLogin.php" method="post" >
+         	<table id="row-bordered">
+            <tr>
+              <td>Username</td>
+              <td>
+                <input type="text" name="username" required>
+              </td>
+            </tr>
 
-          <tr>
-          	<td>Password</td>
-            <td>
-              <input type="password" name="password" required>
-            </td>
-          </tr>
+            <tr>
+            	<td>Password</td>
+              <td>
+                <input type="password" name="password" required>
+              </td>
+            </tr>
 
+<<<<<<< HEAD
           <tr>
             <td colspan="2" style="text-align: center;">
             <a style="color: #6495ED; text-decoration: none;" href="register.php"><p> Register Now!</p></a>
             </td>
           </tr>
+=======
+            <tr>
+              <td colspan="2" style="text-align: center;">
+              <input type="submit" class="loginForm" name="loginForm" value="Log In">
+              </td>
+            </tr>
+>>>>>>> a89184d0877134f0dcc6db61cd1726bff428ea76
 
-          <tr>
-            <td colspan="2" style="text-align: center;">
-              <div class="formItem">
-              <input type="submit" name="loginForm" value="Log In">
+            <tr>
+              <td colspan="2" style="text-align: center;">
+              <div class="registerBtn">
+                <a href="register.php">Register Now</a>
               </div>
-            </td>
-          </tr>
-
-       </form>
-     </div>
+              </td>
+            </tr>
+         </form>
+      </div>
+     </section>
 
    <?php endif; ?>
 
