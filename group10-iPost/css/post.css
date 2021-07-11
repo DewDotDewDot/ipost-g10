@@ -32,3 +32,11 @@ h1{
   padding: 23px;
   align content: center;
 }
+.changePass{
+  border: 1px solid black;
+  margin: 20px;
+}
+.newPass{
+  padding: 20px;
+  margin: 7px;
+}

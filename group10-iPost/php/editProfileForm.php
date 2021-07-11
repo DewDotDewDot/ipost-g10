@@ -154,16 +154,26 @@
             <?php endwhile; ?>
           <?php endif; ?>
         </div>
-    <div>
-      <h2> Change Password: </h2>
+    <div class="changePass">
+      <div class="newPass">
+        <h2> Change Password: </h2>
+      </div>
       <form action="handleEditProfile.php?id=<?php echo $tmp_user_id?>&passChange=true" method="post">
-        <label> Current Password: </label>
-        <input type="password" name="oldPass" required> <br>
-        <label> New Password: </label>
-        <input type="password" name="newPass" required> <br>
-        <label> Confirm Password: </label>
-        <input type="password" name="confPass" required> <br>
-        <input type="submit" value="change password"d>
+        <div class="newPass">
+          <label> Current Password: </label>
+          <input type="password" name="oldPass" required> <br>
+        </div>
+        <div class="newPass">
+          <label> New Password: </label>
+          <input type="password" name="newPass" required> <br>
+        </div>
+        <div class="newPass">
+          <label> Confirm Password: </label>
+          <input type="password" name="confPass" required> <br>
+        </div>
+        <div class="newPass">
+          <input type="submit" value="Change Password">
+        </div>
       </form>
     </div>
   </body>
