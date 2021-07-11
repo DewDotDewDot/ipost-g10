@@ -3,7 +3,7 @@ body
   background-color: #1b1f26;
 }
 h1{
-  color:#ccc9bc;
+  color: #ccc9bc;
 }
 .post-content{
   color: #ccc9bc;
@@ -26,13 +26,9 @@ h1{
   style="width: 259px;
   vertical-align: top;
 }
-
-.feeds-itemsWrapper > table, tr, td{
+.feeds-itemsWrapper > table, th, tr, td{
   border: 1px solid black;
   border-collapse: collapse;
-  padding: 25px;
-}
-
-.feeds-itemsWrapper {
-  padding: 100px;
+  padding: 23px;
+  align content: center;
 }
