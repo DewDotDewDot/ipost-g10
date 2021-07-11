@@ -15,7 +15,7 @@
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../css/navbar.css" type="text/css">
-    <link rel="stylesheet" href="../css/Post.css" type="text/css">
+    <link rel="stylesheet" href="../css/post.css" type="text/css">
   </head>
   <body>
     <?php include_once("goodnavbar.php"); ?>
@@ -131,7 +131,7 @@
           <?php endif; ?>
 
        <h1>Posts: </h1>
-       <?php if($tmp_privacy == 0 || $_SESSION['user_id'] == $tmp_user_id) {
+       <?php
 
          $query = "SELECT * FROM tbl_feed WHERE user_id = '$tmp_user_id' ORDER BY timestamp DESC";
 
@@ -211,7 +211,7 @@
                            </div>
                            <?php if (isset($tmp_image)) { ?>
                            <div>
-                             <img src="<?php echo  "../img_assets/posts/$tmp_image"; ?>">
+                             <img class="post_image" src="<?php echo  "../img_assets/posts/$tmp_image"; ?>">
                            </div>
                           <?php } ?>
                            <div class="post-content">
@@ -233,10 +233,6 @@
              <?php endif; ?>
            <?php endwhile; ?>
          <?php endif; ?>
-
-       <?php } else { ?>
-         <h5> This user has their account on private </h5>
-       <?php } ?>
        </div>
     </div>
   </body>

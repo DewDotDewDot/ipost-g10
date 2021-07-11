@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="../css/navbar.css" type="text/css">
     <link rel="stylesheet" type="text/css" href="../css/body.css">
     <link rel="stylesheet" href="../css/nav.css" type="text/css">
+    <link rel="stylesheet" href="../css/post.css" type="text/css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
    </head>
    <body>

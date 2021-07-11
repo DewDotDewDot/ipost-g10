@@ -45,7 +45,8 @@
     $tmp_feed_title = $_POST['title'];
     $tmp_feed_content = $_POST['feedPost'];
     $tmp_user_id = $_SESSION['user_id'];
-    $query = "INSERT INTO tbl_feed (user_id, header, image, content) VALUES ('$tmp_user_id', '$tmp_feed_title', '$newFileName', '$tmp_feed_content')";
+    $query = "INSERT INTO tbl_feed (user_id, header, content) VALUES ('$tmp_user_id', '$tmp_feed_title', '$tmp_feed_content')";
+
   } elseif ($type == "comment") {
     $tmp_post_id = $_GET['post_id'];
     $tmp_comment = $_POST['comment'];
@@ -53,7 +54,10 @@
     $query = "INSERT INTO tbl_comments (post_id, user_id, comment) VALUES ('$tmp_post_id', '$tmp_user_id', '$tmp_comment')";
   }
   $execQuery = mysqli_query($sql, $query);
-
+  if($upload) {
+    $uploadQuery = "UPDATE tbl_feed SET image = '$newFileName' WHERE id = '$post_id'";
+    $execQuery = mysqli_query($sql, $uploadQuery);
+  }
 ?>
 
 <script>
