@@ -31,15 +31,17 @@
     <?php endif; ?>
 
       <div class="feed-wrapper">
-        <form class="feed-formPost" action="handlePost.php?type=post" method="post" enctype='multipart/form-data'>
+        <section class="writePost">
+          <form class="feed-formPost" action="handlePost.php?type=post" method="post" enctype='multipart/form-data'>
 
-        <h1>Welcome, <?php echo $_SESSION["user_name"]; ?></h1>
-        <input type="text" name="title" placeholder="Set your title here" required> <br>
-        <pre><textarea name="feedPost" rows="4" cols="50" placeholder="Put your text content here" required></textarea></pre>
-        <input class="post-content" type="file" name="feed_pic" accept="image/*">
-        <input type="submit" name="feedSubmit" value="Post">
+          <h1>Welcome, <?php echo $_SESSION["user_name"]; ?></h1>
+          <input type="text" name="title" placeholder="Set your title here" required> <br>
+          <pre><textarea name="feedPost" rows="4" cols="50" placeholder="Put your text content here" required></textarea></pre>
+          <input class="post-content" type="file" name="feed_pic" accept="image/*">
+          <input type="submit" name="feedSubmit" value="Post">
 
-        </form>
+          </form>
+        </section>
 
       <h1>See your friends!</h1> <!--feed set-->
         <div class="feed-posts">

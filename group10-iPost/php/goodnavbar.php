@@ -1,7 +1,11 @@
 <?php
 include_once("database.php");
 ?>
-
+<style>
+  .navbar navbar-expand-lg navbg {
+    background-color: #000000;
+  }
+</style>
 <nav class="navbar navbar-expand-lg navbg ">
   <div class="container-fluid">
     <a class="navbar-brand  text-reset text-decoration-none" href="index.php">IPOST</a>
@@ -17,7 +21,7 @@ include_once("database.php");
        <li> <!-- Needs CSS. Search Bar for users-->
          <form action="searchUser.php" method="post">
            <input type="text" name="username" required>
-           <input type="submit" value="Find user">
+           <input type="submit" value="Find User">
          </form>
        </li>
        <li class="nav-item">

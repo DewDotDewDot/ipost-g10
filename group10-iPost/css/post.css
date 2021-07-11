@@ -26,3 +26,8 @@ h1{
   style="width: 259px;
   vertical-align: top;
 }
+
+.feeds-itemsWrapper > table, tr, td{
+  border: 1px solid black;
+  border-collapse: collapse;
+}
