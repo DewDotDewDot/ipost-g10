@@ -34,7 +34,7 @@
 
       <?php include_once("goodnavbar.php"); ?>
 
-      <h1>Edit profile: </h1>
+      <h1 class="editTitle">Edit profile: </h1>
 
         <div class="feed-posts">
 
@@ -147,8 +147,12 @@
                       </td>
                     <?php } ?>
                     </tr>
+                    <tr>
+                      <td>
+                        <input type="submit" value="Save Changes">
+                      </td>
+                    </tr>
                   </table>
-                  <input type="submit" value="Save changes">
                 </form>
                 </div>
             <?php endwhile; ?>

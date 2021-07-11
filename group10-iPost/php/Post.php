@@ -160,7 +160,7 @@
                           </td>
                           <?php if($_SESSION['user_type'] == 1 || $sess_user_id == $tmp_user_id) { ?>
                           <td>
-                            <div>
+                            <div class="deleteBtn">
                               <a href="deleteItem.php?id=<?php echo $tmp_post_id?>&type=post&user_id=<?php echo $tmp_user_id?>"><h6>Delete</h6></a>
                             </div>
                           </td>

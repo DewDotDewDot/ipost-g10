@@ -39,4 +39,12 @@ h1{
 .newPass{
   padding: 20px;
   margin: 7px;
+  align-content: center;
+}
+.feed-posts{
+  margin: 50px;
+  padding: 20px;
+}
+.editTitle {
+  text-align: center;
 }
