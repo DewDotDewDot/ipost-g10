@@ -30,4 +30,9 @@ h1{
 .feeds-itemsWrapper > table, tr, td{
   border: 1px solid black;
   border-collapse: collapse;
+  padding: 25px;
+}
+
+.feeds-itemsWrapper {
+  padding: 100px;
 }
